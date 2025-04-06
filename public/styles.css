@@ -461,8 +461,39 @@ textarea.form-field {
   margin: 16px;
   flex: 1;
   align-self: center;
+  display: grid;
+  grid-template-columns: 340px 1fr;
+
+}
+
+.form-photo {
+
+  order: 1;
+  grid-row: 1;
+
+}
 
 
+.justify-right {
 
+  display: flex;
+  justify-content: end;
 
+}
+
+.form-content {
+
+  padding: 38px 54px;
+  position: relative;
+
+}
+
+.close-form-overlay {
+
+  position: absolute;
+  top: 0;
+  right: 12px;
+  color: rgba(0, 0, 0, 0.41);
+  font-size: 2rem;
+  transform: scaleX(1.2)
 }

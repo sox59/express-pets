@@ -37,8 +37,9 @@ function handleButtonClick(e) {
 document.querySelector(".form-overlay").style.display = ""
 
 function openOverlay(el) {
-
-
+  document.querySelector(".form-content").dataset.id = el.dataset.id
+  document.querySelector(".form-photo p strong").textContent = el.closest(".pet-card").querySelector(".pet-name").textContent.trim() + "."
+  document.querySelector(".form-photo img").src = el.closest(".pet-card").querySelector(".pet-card-photo img").src
   document.querySelector(".form-overlay").classList.add("form-overlay--is-visible")
 
 
@@ -52,6 +53,30 @@ function closeOverlay() {
 
   document.querySelector(".form-overlay").classList.remove("form-overlay--is-visible")
 
-
-
 }
+
+document.querySelector(".form-content").addEventListener("submit", async function (e) {
+  e.preventDefault()
+
+  const userValues = {
+    petId: e.target.dataset.id,
+    name: document.querySelector("#name").value,
+    email: document.querySelector("#email").value,
+    secret: document.querySelector("#secret").value,
+    comment: document.querySelector("#comment").value
+  }
+
+  fetch("/submit-contact", {
+
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+
+    },
+    body: JSON.stringify(userValues)
+
+  })
+
+
+
+})

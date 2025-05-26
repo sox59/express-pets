@@ -1,0 +1,16 @@
+  989  homebrew
+  990  brew
+  991  brew --version
+  992  brew --version
+  993  git --version
+  994  node --version
+  995  open .
+  996  open .
+  997  ls -al
+  998  ls
+  999  ls -al
+ 1000  ls -al
+ 1001  git --version
+ 1002  node --version
+ 1003  npm run dev
+ 1004  clear
